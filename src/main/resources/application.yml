@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: smart-touch
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASS}
+    driver-class-name: org.postgresql.Driver
+  ai:
+    openai:
+      api-key: ${OPEN_AI_API_KEY}
+
+server:
+  servlet:
+    context-path: /v1
