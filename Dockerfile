@@ -10,10 +10,10 @@ RUN gradle build
 # 2. Just using the build artifact and then removing the build-container
 FROM openjdk:19-alpine
 
-ARG database_url
-ARG database_user
-ARG database_pass
-ARG openai_api_key
+#ARG database_url
+#ARG database_user
+#ARG database_pass
+#ARG openai_api_key
 
 # https://security.alpinelinux.org/vuln/CVE-2021-46848
 RUN apk add --upgrade libtasn1-progs
@@ -33,12 +33,11 @@ USER 10014
 # Add Spring Boot app.jar to Container
 COPY --from=0 "/java-springboot/build/libs/smart-touch-*-SNAPSHOT.jar" app.jar
 
-ENV DATABASE_URL=$database_url
-ENV DATABASE_USER=$database_user
-ENV DATABASE_PASS=$database_pass
-ENV OPEN_AI_API_KEY=$openai_api_key
-
-RUN env
+#ENV DATABASE_URL=$database_url
+#ENV DATABASE_USER=$database_user
+#ENV DATABASE_PASS=$database_pass
+#ENV OPEN_AI_API_KEY=$openai_api_key
+#RUN env
 
 # Fire up our Spring Boot app by default
 CMD [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
