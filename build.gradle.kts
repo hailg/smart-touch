@@ -28,6 +28,10 @@ dependencies {
     implementation("org.springframework.ai:spring-ai-openai-spring-boot-starter")
     implementation("com.google.guava:guava:33.1.0-jre")
 
+    implementation("org.springframework.boot:spring-boot-starter-security:3.2.4")
+    implementation("org.springframework.security:spring-security-oauth2-jose:6.2.3")
+    implementation("org.springframework.security:spring-security-oauth2-resource-server:6.2.3")
+
     runtimeOnly("org.postgresql:postgresql")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")

@@ -9,6 +9,15 @@ spring:
   ai:
     openai:
       api-key: ${OPEN_AI_API_KEY}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${ASGARDEO_ISSUER_URI}
+          jwk-set-uri: ${ASGARDEO_JWK_SET_URI}
+
+smarttouch:
+  audience: ${ASGARDEO_CLIENT_ID}
 
 server:
   servlet:
