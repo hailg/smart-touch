@@ -1,20 +1,34 @@
 spring:
+  data:
+    redis:
+      repositories:
+        enabled: true
+      jedis:
+        pool:
+          enabled: true
+          max-active: 50
+          max-idle: 5
+          min-idle: 1
+          max-wait: 3000
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASS}
+      username: ${REDIS_USER}
+      connect-timeout: 2000
+      timeout: 2000
+      ssl:
+        enabled: true
   application:
     name: smart-touch
-  datasource:
-    url: ${DATABASE_URL}
-    username: ${DATABASE_USER}
-    password: ${DATABASE_PASS}
-    driver-class-name: org.postgresql.Driver
   ai:
     openai:
       api-key: ${OPEN_AI_API_KEY}
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${ASGARDEO_ISSUER_URI}
-          jwk-set-uri: ${ASGARDEO_JWK_SET_URI}
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: ${ASGARDEO_ISSUER_URI}
+#          jwk-set-uri: ${ASGARDEO_JWK_SET_URI}
 
 smarttouch:
   audience: ${ASGARDEO_CLIENT_ID}
