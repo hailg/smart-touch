@@ -1,0 +1,32 @@
+spring:
+  data:
+    redis:
+      repositories:
+        enabled: true
+      jedis:
+        pool:
+          enabled: true
+          max-active: 50
+          max-idle: 5
+          min-idle: 1
+          max-wait: 3000
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASS}
+      username: ${REDIS_USER}
+      connect-timeout: 2000
+      timeout: 2000
+      ssl:
+        enabled: true
+  application:
+    name: smart-touch
+  ai:
+    openai:
+      api-key: ${OPEN_AI_API_KEY}
+
+smarttouch:
+  audience: ${ASGARDEO_CLIENT_ID}
+
+server:
+  servlet:
+    context-path: /v1
