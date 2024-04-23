@@ -24,6 +24,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-mustache")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
+//    implementation("org.springframework.boot:spring-boot-starter-graphql")
 //    implementation("org.flywaydb:flyway-core")
     implementation("org.springframework.ai:spring-ai-openai-spring-boot-starter")
     implementation("com.google.guava:guava:33.1.0-jre")

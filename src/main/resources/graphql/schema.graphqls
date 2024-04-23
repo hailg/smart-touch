@@ -1,0 +1,10 @@
+type Query {
+    getContactById(id: ID): Contact
+}
+
+type Contact {
+    id: ID
+    name: String
+    email: String
+    attributes: String
+}
