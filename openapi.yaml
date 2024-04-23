@@ -50,6 +50,19 @@ paths:
           description: Invalid input
         '422':
           description: Validation exception
+    get:
+      summary: Get all contacts
+      description: Returns all contacts from the system that the user has access to
+      operationId: getContacts
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact'
 components:
   schemas:
     Contact:
