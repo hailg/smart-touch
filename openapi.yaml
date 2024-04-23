@@ -2,10 +2,7 @@ openapi: 3.0.3
 info:
   title: Smart Touch
   description: |-
-    Defines the API supported by Smart Touch. Application to allow anyone to manage their communication campain with their customers. 
-    Some useful links:
-    - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
-    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+    Defines the API supported by Smart Touch. Application to allow anyone to manage their communication campain with their customers.
   termsOfService: http://swagger.io/terms/
   contact:
     email: hello@developer.life
@@ -45,12 +42,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Contact'          
+                $ref: '#/components/schemas/Contact'
         '400':
           description: Invalid input
         '422':
           description: Validation exception
     get:
+      tags:
+        - contact
       summary: Get all contacts
       description: Returns all contacts from the system that the user has access to
       operationId: getContacts
@@ -67,8 +66,7 @@ components:
   schemas:
     Contact:
       required:
-        - firstName
-        - lastName
+        - email
       type: object
       properties:
         id:
@@ -82,9 +80,4 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Contact'
-        application/xml:
-          schema:
-            $ref: '#/components/schemas/Contact'
-            
-            
-            
+
